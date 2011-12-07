@@ -1,5 +1,5 @@
 /*
- * Notify 0.0.1 - A Jquery Notification Extension
+ * Notify 0.0.2 - A Jquery Notification Extension
  * Homepage: redeyeoperation.com/plugins/Notify
  *
  * Author: Jacob Lowe (redeyeoperations.com)
@@ -28,10 +28,8 @@ $.support.transition = (function(){
 //Start of actual extension
 
 (function($){
-    
-    
-    
-    var ele, space, timer,
+     
+    var ele, space, timer, btns,
             modTest = $.support.transition,
             //Show animation + classes toggle/reset
             show = (modTest) ?
@@ -96,9 +94,34 @@ $.support.transition = (function(){
                     //Clear timeout if there is one
                     clearTimeout(timer);    
                     //We have option
-                    if(typeof (options) === 'object'){            
+                    if(typeof (options) === 'object'){
+                            //New button feature
+                            if(typeof(options.btn) === 'object'){
+                                //Array to support multiple btns
+                                btns =[];
+                                //declaring our btn object
+                                $.notify.btn = {};
+                                //Loop through all the btns in the object
+                                for (var btn in options.btn) {
+                                    //If the btn object exist and it has a callback
+                                    if (options.btn.hasOwnProperty(btn) && typeof (options.btn[btn].callback) === 'function'){
+                                        //Define our callback
+                                        $.notify.btn[btn] = options.btn[btn].callback;
+                                        //Allow setting a name for the btn
+                                        var val = (typeof (options.btn[btn].value) === 'string' ) ? options.btn[btn].value : btn;
+                                        //Build btn and attach callback
+                                        btns.push('<a href="#btn-' + btn + '" class="notify-btn" onclick="$.notify.btn.' + btn + '()">' + val + '</a>');
+                                    }
+                                }
+                                //Join btns
+                                btns = btns.join('');
+                                //Add btns to string of text
+                                txt = txt + btns;
+                            }
+                        
                             if(options.close){
-                                txt = txt + ' <div class="notify-close"></div>';
+                                txt = '<div class="notify-close"></div>' + txt;
+                                type  = type + ' notify-close-option';
                                 show(ele, type, txt);
                                 events.close(ele)
                             }else{                                                
@@ -112,6 +135,7 @@ $.support.transition = (function(){
                             if(options.occupySpace){                               
                                     show(space, 'blank', '');                           
                             }
+
                     //No options
                     }else{                       
                         show(ele, type, txt);                        
