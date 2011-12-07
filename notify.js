@@ -1,5 +1,5 @@
 /*
- * Notify 0.0.2 - A Jquery Notification Extension
+ * Notify 0.0.3 - A Jquery Notification Extension
  * Homepage: redeyeoperation.com/plugins/Notify
  *
  * Author: Jacob Lowe (redeyeoperations.com)
@@ -26,40 +26,28 @@ $.support.transition = (function(){
 }());
 
 //Start of actual extension
-
+//Self Execution Anonymous Function
 (function($){
-     
+     //Declaring some variables
     var ele, space, timer, btns,
-            modTest = $.support.transition,
+            //building transition depending on features
+            tran = [($.support.transition) ? 'css' : 'animate', ($.support.transition) ? '' : 1000],
             //Show animation + classes toggle/reset
-            show = (modTest) ?
-                    function(element, extClass , txt){
-                            element
-                                .attr('class', 'notify-' + extClass + ' notify-visible')
-                                .html(txt);
-                    } :
-                    function(element, extClass , txt){      
+            show = function(element, extClass , txt){      
                             element
                                 .attr('class', 'notify-' + extClass + ' notify-visible')
                                 .html(txt)
-                                .animate({height: '30px'},400);
-                    },
+                                [tran[0]]({height: '50px'},tran[1]);
+            },
             //Hide animation + classes toggle
-            hide = (modTest) ?
-                    function(element){
-                            element
-                                    .removeClass('notify-visible')
-                                    .addClass('notify-hidden')
-                                    .empty();
-                    } :
-                    function(element){
+            hide = function(element){
                             element
                                     .removeClass('notify-visible')
                                     .addClass('notify-hidden')
                                     .empty()
-                                    .animate({height: '0px'},400);
+                                    [tran[0]]({height: '0px'},tran[1]);
                         
-                    },
+            },
             //Events object
             events = {
                     close : function(){
@@ -116,7 +104,7 @@ $.support.transition = (function(){
                                 //Join btns
                                 btns = btns.join('');
                                 //Add btns to string of text
-                                txt = txt + btns;
+                                txt =  btns + txt;
                             }
                         
                             if(options.close){
@@ -145,7 +133,7 @@ $.support.transition = (function(){
     $.extend({
         notify : {
             success: function(txt, options){
-                    handle('success', txt, options);
+                handle('success', txt, options);
             },
             error : function(txt, options){
                 handle('error', txt, options);

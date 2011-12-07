@@ -1,5 +1,5 @@
 /*
- * Notify 0.0.2 - A Jquery Notification Extension
+ * Notify 0.0.3 - A Jquery Notification Extension
  * Homepage: redeyeoperation.com/plugins/Notify
  *
  * Author: Jacob Lowe (redeyeoperations.com)
@@ -28,10 +28,11 @@
         text-align: center;
         font-size: 17px;
         visibility: hidden;
-        z-index: 99999;
+        z-index: 99998;
         overflow: hidden;
         font-weight: 700;
         box-shadow: 0 1px 2px rgba(0,0,0,.3);
+        white-space: nowrap;
 }
 
 #notify, #notify-placeholder{
@@ -42,10 +43,7 @@
 	transition: height 1s ease-in-out;
 }
 
-
-
 #notify.notify-visible, .notify-visible{
-        height: 50px;
         visibility: visible;
 }
 
@@ -152,7 +150,7 @@
 }
 
 .notify-hidden .notify-close{
-        display: none;
+        visibility: hidden;
 }
 
 #notify-placeholder{
