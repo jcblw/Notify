@@ -129,29 +129,38 @@ $.support.transition = (function(){
                         show(ele, type, txt);                        
                     }                
             };
-    //Extending jquery with a commands
-    $.extend({
-        notify : {
-            success: function(txt, options){
-                handle('success', txt, options);
-            },
-            error : function(txt, options){
-                handle('error', txt, options);
-            },
-            alert : function(txt, options){
-                handle('alert', txt, options);
-            },
-            basic : function(txt, options){
-                handle('basic', txt, options);
-            },
-            //Only command that really does something differntly
-            close : function(){
-                hide(ele);
-                hide(space);
-            }
-            //TODO: Add setting function to change defaults
-        }
-    });
+    //Extending jquery 
+    $.notify = (function(){
+        var notify = function(txt, options){
+            handle('basic', txt, options);
+        };
+            //Creating a prototype for notify
+            notify.prototype = {
+                custom : function (type, txt, options) {
+                    handle(type, txt, options);
+                },
+                success: function(txt, options){
+                    handle('success', txt, options);
+                },
+                error : function(txt, options){
+                    handle('error', txt, options);
+                },
+                alert : function(txt, options){
+                    handle('alert', txt, options);
+                },
+                basic : function(txt, options){
+                    handle('basic', txt, options);
+                },
+                close : function(){
+                    hide(ele);
+                    hide(space);
+                }
+            };
+        //Extending notify with its prototype
+        $.extend(notify, notify.prototype);
+        //Returning notify object
+        return notify;
+    }());
     
     //Script about loaded let build
     build();
