@@ -100,13 +100,13 @@ Success is a green scheme
 
 Alert is a yellow scheme
 
-    $.notify.alert('Something need your attention');
+    $.notify.alert('Something needs your attention');
     
 ####Error
 
 Error is a red scheme
 
-    $.notify.error('Please Fille out Required Feilds');
+    $.notify.error('Please Fill out Required Feilds');
     
 ####_and_ Basic
 
