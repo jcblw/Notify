@@ -6,7 +6,7 @@ Notify is a jquery plugin/extension that makes webpage notification handling eas
     
 ### Adding it to your site.
 
-Add the two file plus the optional image.
+Add the two files plus the optional image.
 
     <link type="text/css" media="screen" href="notify.css">
     <script src="notify.js"></script>
