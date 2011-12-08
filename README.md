@@ -154,9 +154,9 @@ Brand new feature that is still on the chopping block but could be very useful. 
     
 You can also edit the CSS of the Notify element
 
-    $.notify('You edit my text color, badass').css('color', '#bada55');
+    $.notify('You edited my text color, badass').css('color', '#bada55');
     
-_Note: this will over write all text color on all styles. The style will only be removed if you do it manually.
+_Note: this will over write all text color on all styles. The style will only be removed if you do it manually._
 
     $.notify('Removed those pesky styles').attr('style', '');
     
@@ -166,7 +166,7 @@ _Note: this will over write all text color on all styles. The style will only be
 
 ###Notify will bend to your needs
 
-    All styles are done in the CSS. _except height_. So you can edit exsisting styles to suit your needs.
+All styles are done in the CSS. _except height_. So you can edit exsisting styles to suit your needs.
     
 ##Working Demo
 
