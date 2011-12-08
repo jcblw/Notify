@@ -1,5 +1,5 @@
 /*
- * Notify 0.0.3 - A Jquery Notification Extension
+ * Notify 0.0.4 - A Jquery Notification Extension
  * Homepage: redeyeoperation.com/plugins/Notify
  *
  * Author: Jacob Lowe (redeyeoperations.com)
