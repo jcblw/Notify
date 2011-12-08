@@ -133,6 +133,7 @@ $.support.transition = (function(){
     $.notify = (function(){
         var notify = function(txt, options){
             handle('basic', txt, options);
+            return ele;
         };
             //Creating a prototype for notify
             notify.prototype = {
