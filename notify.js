@@ -81,6 +81,7 @@ $.support.transition = (function(){
             handle = function(type, txt, options){
                     //Clear timeout if there is one
                     clearTimeout(timer);    
+                    options = $.extend($.notify.defaultOptions, options);
                     //We have option
                     if(typeof (options) === 'object'){
                             //New button feature
@@ -155,7 +156,8 @@ $.support.transition = (function(){
                 close : function(){
                     hide(ele);
                     hide(space);
-                }
+                },
+                defaultOptions : {}
             };
         //Extending notify with its prototype
         $.extend(notify, notify.prototype);
