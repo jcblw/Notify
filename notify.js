@@ -9,7 +9,7 @@
  * Dual licensed under the MIT (MIT-LICENSE.txt)
  * and GPL (GPL-LICENSE.txt) licenses.
  *
- * 
+ *
  * Built for jQuery library
  * http://jquery.com
  *
@@ -17,12 +17,12 @@
   *to verify that CSS3 transition is supported (or any of its browser-specific implementations)
  */
 
-$.support.transition = (function(){ 
+$.support.transition = (function(){
     var thisBody = document.body || document.documentElement,
     thisStyle = thisBody.style,
     support = thisStyle.transition !== undefined || thisStyle.WebkitTransition !== undefined || thisStyle.MozTransition !== undefined || thisStyle.MsTransition !== undefined || thisStyle.OTransition !== undefined;
-    
-    return support; 
+
+    return support;
 }());
 
 //Start of actual extension
@@ -33,7 +33,7 @@ $.support.transition = (function(){
             //building transition depending on features
             tran = [($.support.transition) ? 'css' : 'animate', ($.support.transition) ? '' : 1000],
             //Show animation + classes toggle/reset
-            show = function(element, extClass , txt){      
+            show = function(element, extClass , txt){
                             element
                                 .attr('class', 'notify-' + extClass + ' notify-visible')
                                 .html(txt)
@@ -46,41 +46,42 @@ $.support.transition = (function(){
                                     .addClass('notify-hidden')
                                     .empty()
                                     [tran[0]]({height: '0px'},tran[1]);
-                        
+
             },
             //Events object
             events = {
                     close : function(){
                         $('.notify-close').bind('click', function(){
-                                
+
                                 hide(ele);
                                 hide(space);
                                 $(this).unbind('click');
                         });
                     },
                     autoClose : function(time){
-                        
-                             timer = setTimeout(function(){   
+
+                             timer = setTimeout(function(){
                                     hide(ele);
                                     hide(space);
                             },time)
-                        
+
                     }
             },
             //Build - Adding element to the document
             build = function(){
-                
+
                     $('body')
                             .prepend('<div class="notify-hidden" id="notify" rel="Notifications"></div>\
-                                                <div id="notify-placeholder"></div>');           
+                                                <div id="notify-placeholder"></div>');
                     ele = $('#notify');
                     space = $('#notify-placeholder');
-            
+
             },
             //Were variables are parsed and order of event are defined
             handle = function(type, txt, options){
                     //Clear timeout if there is one
-                    clearTimeout(timer);    
+                    clearTimeout(timer);
+                    options = $.extend($.notify.defaultOptions, options);
                     //We have option
                     if(typeof (options) === 'object'){
                             //New button feature
@@ -106,30 +107,30 @@ $.support.transition = (function(){
                                 //Add btns to string of text
                                 txt =  btns + txt;
                             }
-                        
+
                             if(options.close){
                                 txt = '<div class="notify-close"></div>' + txt;
                                 type  = type + ' notify-close-option';
                                 show(ele, type, txt);
                                 events.close(ele)
-                            }else{                                                
-                                    show(ele, type, txt);                          
+                            }else{
+                                    show(ele, type, txt);
                             }
-                            
+
                             if(typeof (options.autoClose) === 'number'){
                                         events.autoClose(options.autoClose);
                             }
-                            
-                            if(options.occupySpace){                               
-                                    show(space, 'blank', '');                           
+
+                            if(options.occupySpace){
+                                    show(space, 'blank', '');
                             }
 
                     //No options
-                    }else{                       
-                        show(ele, type, txt);                        
-                    }                
+                    }else{
+                        show(ele, type, txt);
+                    }
             };
-    //Extending jquery 
+    //Extending jquery
     $.notify = (function(){
         var notify = function(txt, options){
             handle('basic', txt, options);
@@ -155,15 +156,16 @@ $.support.transition = (function(){
                 close : function(){
                     hide(ele);
                     hide(space);
-                }
+                },
+                defaultOptions : {}
             };
         //Extending notify with its prototype
         $.extend(notify, notify.prototype);
         //Returning notify object
         return notify;
     }());
-    
+
     //Script about loaded let build
     build();
-    
+
 }(jQuery));
