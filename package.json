@@ -8,10 +8,10 @@
   "main": ".",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jacoblwe20/Notifier.git"
+    "url": "https://github.com/jacoblwe20/Notify.git"
   },
   "bugs": {
-    "url": "https://github.com/jacoblwe20/Notifier/issues"
+    "url": "https://github.com/jacoblwe20/Notify/issues"
   },
   "keywords": [
     "notifications"
