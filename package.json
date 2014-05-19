@@ -1,6 +1,6 @@
 {
   "name": "Notify",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "Notify is a JavaScript library that displays notifications in the user’s browser.",
   "dependencies": {
     "jquery": "~1.10.2"

@@ -1,5 +1,5 @@
 /*
- * Notify 0.1.0- A Jquery Notification Extension
+ * Notify 0.1.1- A Jquery Notification Extension
  * Homepage: https://github.com/jacoblwe20/Notify
  *
  * Author: Jacob Lowe (http://jacoblowe.me/)

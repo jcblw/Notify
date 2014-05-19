@@ -1,5 +1,5 @@
 /*
- * Notify 0.1.0 - A Jquery Notification Extension
+ * Notify 0.1.1 - A Jquery Notification Extension
  * Homepage: https://github.com/jacoblwe20/Notify
  *
  * Author: Jacob Lowe (http://jacoblowe.me/)
@@ -15,7 +15,6 @@
  * jQuery.support.transition
  * to verify that CSS3 transition is supported (or any of its browser-specific implementations)
  */
-
 
 #notify{
 	font-family: sans-serif;
