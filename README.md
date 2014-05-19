@@ -208,7 +208,3 @@ _Note: this will over write all text color on all styles. The style will only be
 ###Notify will bend to your needs
 
 All styles are done in the CSS. _except height_. So you can edit exsisting styles to suit your needs.
-    
-##Working Demo
-
-[Notify Home Page](http://redeyeoperation.com/plugins/Notify)
