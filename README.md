@@ -11,8 +11,8 @@ $.notify('Notify - Let them know');
 Add the two files plus the optional image.
 
 ``` html
-<link type="text/css" media="screen" href="notify.css">
-<script src="notify.js"></script>
+<link type="text/css" media="screen" href="jquery.notify.css">
+<script src="jquery.notify.js"></script>
 ```
     
 Oh in case you dont have it add [jQuery](http://jquery.com) before script
