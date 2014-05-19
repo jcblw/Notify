@@ -1,0 +1,26 @@
+{
+  "name": "Notify",
+  "version": "0.1.1",
+  "description": "Notify is a JavaScript library that displays notifications in the user’s browser.",
+  "dependencies": {
+    "jquery": "~1.10.2"
+  },
+  "main": ".",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jacoblwe20/Notify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jacoblwe20/Notify/issues"
+  },
+  "keywords": [
+    "notifications"
+  ],
+  "author": {
+    "name": "jacoblwe20",
+    "url": "http://jacoblowe.me/"
+  },
+  "contributors": [
+    { "name": "Jacob Lowe" }
+  ]
+}

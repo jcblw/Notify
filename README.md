@@ -11,8 +11,8 @@ $.notify('Notify - Let them know');
 Add the two files plus the optional image.
 
 ``` html
-<link type="text/css" media="screen" href="notify.css">
-<script src="notify.js"></script>
+<link type="text/css" media="screen" href="jquery.notify.css">
+<script src="jquery.notify.js"></script>
 ```
     
 Oh in case you dont have it add [jQuery](http://jquery.com) before script
@@ -208,7 +208,3 @@ _Note: this will over write all text color on all styles. The style will only be
 ###Notify will bend to your needs
 
 All styles are done in the CSS. _except height_. So you can edit exsisting styles to suit your needs.
-    
-##Working Demo
-
-[Notify Home Page](http://redeyeoperation.com/plugins/Notify)

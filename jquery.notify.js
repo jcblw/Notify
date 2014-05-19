@@ -1,11 +1,10 @@
 /*
- * Notify 0.1.0- A Jquery Notification Extension
- * Homepage: redeyeoperation.com/plugins/Notify
+ * Notify 0.1.1- A Jquery Notification Extension
+ * Homepage: https://github.com/jacoblwe20/Notify
  *
- * Author: Jacob Lowe (redeyeoperations.com)
- * Twitter Handle @jacoblowe2dot0
+ * Author: Jacob Lowe (http://jacoblowe.me/)
  *
- * Copyright (c) 2010 Jacob Lowe (http://redeyeoperations.com)
+ * Copyright (c) 2010 Jacob Lowe (http://jacoblowe.me/)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
  * and GPL (GPL-LICENSE.txt) licenses.
  *
@@ -14,7 +13,7 @@
  * http://jquery.com
  *
  * jQuery.support.transition
-  *to verify that CSS3 transition is supported (or any of its browser-specific implementations)
+ * to verify that CSS3 transition is supported (or any of its browser-specific implementations)
  */
 
 $.support.transition = (function(){
