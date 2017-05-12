@@ -1,5 +1,7 @@
 ## Notify - Let them know
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jcblw/Notify.svg)](https://greenkeeper.io/)
+
 Notify is a jquery plugin/extension that makes webpage notification handling easy.
 
 ``` javascript
